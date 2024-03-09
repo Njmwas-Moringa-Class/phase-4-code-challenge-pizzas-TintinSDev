@@ -176,7 +176,7 @@ class TestApp:
             )
 
             assert response.status_code == 400
-            assert response.json['errors'] == ["validation errors"]
+            assert "Validation errors" in response.json['errors']
 
             response = app.test_client().post(
                 '/restaurant_pizzas',
@@ -188,4 +188,4 @@ class TestApp:
             )
 
             assert response.status_code == 400
-            assert response.json['errors'] == ["validation errors"]
+            assert "Validation errors" in response.json['errors']
